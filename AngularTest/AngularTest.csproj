@@ -25,6 +25,7 @@
     <UseGlobalApplicationHostFile />
     <NuGetPackageImportStamp>
     </NuGetPackageImportStamp>
+    <Use64BitIISExpress />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -267,6 +268,7 @@
     <Content Include="Scripts\app\app.js" />
     <Content Include="Scripts\app\config.js" />
     <Content Include="Scripts\app\constants.js" />
+    <Content Include="Scripts\app\controllers\lab-order-detail-view-controller.js" />
     <Content Include="Scripts\app\controllers\lab-order-list-view-controller.js" />
     <Content Include="Scripts\app\controllers\main-controller.js" />
     <Content Include="Scripts\app\directives\lab-order-list-view-control.js" />
