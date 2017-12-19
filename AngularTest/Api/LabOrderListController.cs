@@ -16,7 +16,6 @@ namespace AngularTest.Api
         // GET: api/LabOrderList
         public async Task<List<LabOrderListViewModel>> Get()
         {
-            Console.WriteLine("Get(): ");
             var service = new LabOrderService();
             //TODO:Complete service implementation
             var result = await service.GetLabOrderList();

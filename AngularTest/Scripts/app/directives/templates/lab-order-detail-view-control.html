@@ -1,0 +1,17 @@
+﻿<md-content>
+    <md-detail>
+        <div layout="column">
+            <h3>Lab Order #{{ labOrderDetail.id }} {{ labOrderDetail.orderDateDisplay }}</h3>
+            <span>Lab Test: {{ labOrderDetail.labTestName}}</span>
+            <span>Patient Name: {{ labOrderDetail.patientLastName}}, {{ labOrderDetail.patientFirstName}}</span>
+            <span>Facility Name: {{ labOrderDetail.facilityName}}</span>
+            <form name="myForm" ng-controller="labOrderDetailViewController">
+                <md-input-container>
+                    <input mdInput type="text" placeholder="Amount Collected" ng-model="labOrderDetail.amountCollected">
+                </md-input-container>
+            </form>
+            <a md-button ng-click="saveLabOrderDetail()">Save</a>
+        </div>
+    </md-detail>
+</md-content>
+

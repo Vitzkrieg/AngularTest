@@ -59,7 +59,6 @@ namespace AngularTest.Services
                 AmountBilled = row.Field<decimal>("AmountBilled"),
                 AmountCollected = row.Field<decimal>("AmountCollected")
             };
-            System.Diagnostics.Debug.WriteLine("Id: " + laborder.Id);
             return laborder;
         }
     }
