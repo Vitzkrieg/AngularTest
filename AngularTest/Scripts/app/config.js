@@ -3,6 +3,7 @@
     function ($stateProvider, $locationProvider, $mdIconProvider, $urlRouterProvider, $mdThemingProvider) {
 
         $locationProvider.hashPrefix('');
+
         // theme
         $mdThemingProvider.theme('default')
             .primaryPalette('blue')
@@ -11,11 +12,19 @@
 
         // routes
         $urlRouterProvider.otherwise('/main');
-        $stateProvider.state('main',
+
+        // states
+        $stateProvider
+            .state('main',
             {
                 url: '/main',
                 templateUrl: '/scripts/app/views/main.html',
                 controller: 'mainController'
+            }).state('detail',
+            {
+                url: '/detail/:id?',
+                templateUrl: '/scripts/app/views/detail.html',
+                controller: 'detailController'
             });
     }
 ]);

@@ -38,7 +38,7 @@
                                 function (data, status, headers, config) {
                                     // called asynchronously if an error occurs
                                     // or server returns response with an error status.
-                                    console.log('asyncDataServiceGET error (data)', data);
+                                    console.log('asyncDataServicePOST error (data)', data);
                                     console.log('trace ', console.trace());
                                     return data;
 
@@ -57,7 +57,7 @@
                                 .error(function (data, status, headers, config) {
                                     // called asynchronously if an error occurs
                                     // or server returns response with an error status.
-                                    console.log('asyncDataServiceGET error (data)', data);
+                                    console.log('asyncDataServiceDELETE error (data)', data);
                                     console.log('trace ', console.trace());
                                 });
                         });

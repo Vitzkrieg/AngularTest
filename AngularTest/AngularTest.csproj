@@ -25,6 +25,7 @@
     <UseGlobalApplicationHostFile />
     <NuGetPackageImportStamp>
     </NuGetPackageImportStamp>
+    <Use64BitIISExpress />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -199,6 +200,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Api\LabOrderDetailController.cs" />
     <Compile Include="Api\LabOrderListController.cs" />
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="App_Start\FilterConfig.cs" />
@@ -244,10 +246,12 @@
     <Compile Include="Models\AccountBindingModels.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\IdentityModels.cs" />
+    <Compile Include="Models\LabOrderDetailViewModel.cs" />
     <Compile Include="Models\LabOrderListViewModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Providers\ApplicationOAuthProvider.cs" />
     <Compile Include="Results\ChallengeResult.cs" />
+    <Compile Include="Services\LabOrderDetailService.cs" />
     <Compile Include="Services\LabOrderService.cs" />
     <Compile Include="Startup.cs" />
   </ItemGroup>
@@ -267,11 +271,16 @@
     <Content Include="Scripts\app\app.js" />
     <Content Include="Scripts\app\config.js" />
     <Content Include="Scripts\app\constants.js" />
+    <Content Include="Scripts\app\controllers\detail-controller.js" />
+    <Content Include="Scripts\app\controllers\lab-order-detail-view-controller.js" />
     <Content Include="Scripts\app\controllers\lab-order-list-view-controller.js" />
     <Content Include="Scripts\app\controllers\main-controller.js" />
+    <Content Include="Scripts\app\directives\lab-order-detail-view-control.js" />
     <Content Include="Scripts\app\directives\lab-order-list-view-control.js" />
+    <Content Include="Scripts\app\directives\templates\lab-order-detail-view-control.html" />
     <Content Include="Scripts\app\directives\templates\lab-order-list-view-control.html" />
     <Content Include="Scripts\app\services\async-data-service.js" />
+    <Content Include="Scripts\app\views\detail.html" />
     <Content Include="Scripts\app\views\main.html" />
     <Content Include="Scripts\vendor\ai.0.22.9-build00167.js" />
     <Content Include="Scripts\vendor\ai.0.22.9-build00167.min.js" />
