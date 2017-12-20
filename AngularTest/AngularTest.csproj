@@ -200,7 +200,6 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Api\SaveLabOrderDetailController.cs" />
     <Compile Include="Api\LabOrderDetailController.cs" />
     <Compile Include="Api\LabOrderListController.cs" />
     <Compile Include="App_Start\BundleConfig.cs" />

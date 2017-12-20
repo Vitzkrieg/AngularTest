@@ -16,4 +16,13 @@ namespace AngularTest.Models
         public string FacilityName { get; set; }
         public decimal AmountCollected { get; set; }
     }
+    public class LabOrderDetailSaveModel
+    {
+        public int Id { get; set; }
+        public decimal AmountCollected { get; set; }
+    }
+    public class LabOrderDetailResultModel
+    {
+        public bool result { get; set; }
+    }
 }

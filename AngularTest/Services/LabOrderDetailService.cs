@@ -23,7 +23,6 @@ namespace AngularTest.Services
                 "LEFT JOIN Patient as P ON LO.PatientId = P.Id " +
                 "LEFT JOIN Facility as F ON LO.FacilityId = F.Id " +
                 "WHERE LO.Id = " + id;
-            //System.Diagnostics.Debug.WriteLine("GetLabOrderDetail() queryString: " + queryString);
 
             DataSet data;
 
@@ -33,7 +32,7 @@ namespace AngularTest.Services
                 SqlDataAdapter adapter = new SqlDataAdapter();
                 SqlCommand command = new SqlCommand(queryString, connection);
 
-                int x = await command.ExecuteNonQueryAsync();
+                int rows = await command.ExecuteNonQueryAsync();
 
                 data = new DataSet();
                 adapter.SelectCommand = command;
@@ -41,7 +40,7 @@ namespace AngularTest.Services
                 
                 connection.Close();
             }
-            //System.Diagnostics.Debug.WriteLine("GetLabOrderDetail() Count: " + data.Tables[0].Rows.Count);
+
             if (data.Tables[0].Rows.Count > 0)
             {
                 result = getLabOrderDetailFromDataRow(data.Tables[0].Rows[0]);
@@ -53,12 +52,6 @@ namespace AngularTest.Services
 
         private static LabOrderDetailViewModel getLabOrderDetailFromDataRow(DataRow row)
         {
-            //foreach (System.ComponentModel.PropertyDescriptor descriptor in System.ComponentModel.TypeDescriptor.GetProperties(row))
-            //{
-            //    string name = descriptor.Name;
-            //    object value = descriptor.GetValue(row);
-            //    Console.WriteLine("{0} = {1}", name, value);
-            //}
             LabOrderDetailViewModel laborder = new LabOrderDetailViewModel
             {
                 Id = row.Field<int>("Id"),
@@ -81,7 +74,6 @@ namespace AngularTest.Services
             string con = ConfigurationManager.ConnectionStrings["DefaultConnection"].ConnectionString;
 
             string queryString = "UPDATE LabOrder SET AmountCollected = " + amountCollected + " WHERE Id = " + id;
-            System.Diagnostics.Debug.WriteLine("GetLabOrderDetail() queryString: " + queryString);
             
             using (SqlConnection connection = new SqlConnection(con))
             {
@@ -89,13 +81,11 @@ namespace AngularTest.Services
                 SqlDataAdapter adapter = new SqlDataAdapter();
                 SqlCommand command = new SqlCommand(queryString, connection);
 
-                int x = await command.ExecuteNonQueryAsync();
-                System.Diagnostics.Debug.WriteLine("GetLabOrderDetail() x: " + x);
-                result = x > 0;
+                int rows = await command.ExecuteNonQueryAsync();
+                result = rows > 0;
 
                 connection.Close();
             }
-            System.Diagnostics.Debug.WriteLine("GetLabOrderDetail() result: " + result);
 
             return result;
         }

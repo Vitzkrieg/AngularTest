@@ -29,15 +29,15 @@ namespace AngularTest.Services
                 SqlDataAdapter adapter = new SqlDataAdapter();
                 SqlCommand command = new SqlCommand(queryString, connection);
 
-                var x = await command.ExecuteNonQueryAsync();
-                System.Diagnostics.Debug.WriteLine("x: " + x);
+                var rows = await command.ExecuteNonQueryAsync();
+
                 data = new DataSet();
                 adapter.SelectCommand = command;
                 adapter.Fill(data);
                 
                 connection.Close();
             }
-            System.Diagnostics.Debug.WriteLine("Rows: " + data.Tables[0].Rows);
+
             foreach (DataRow row in data.Tables[0].Rows)
             {
                 LabOrderListViewModel laborder = getLabOrderFromDataRow(row);

@@ -18,10 +18,20 @@ namespace AngularTest.Api
         public async Task<LabOrderDetailViewModel> Get(int id)
         {
             var service = new LabOrderDetailService();
-            System.Diagnostics.Debug.WriteLine("Get() id: " + id);
             var result = await service.GetLabOrderDetail(id);
-            System.Diagnostics.Debug.WriteLine("Get() result: " + result);
             return result;
+        }
+
+        // POST: api/saveLabOrderDetail
+        //[Route("api/saveLabOrderDetail/{id}/{amount}")]
+        [HttpPost]
+        public async Task<LabOrderDetailResultModel> Post(LabOrderDetailSaveModel data)
+        {
+            var service = new LabOrderDetailService();
+            var saveResult = await service.SaveLabOrderDetail(data.Id, data.AmountCollected);
+            LabOrderDetailResultModel resultObj = new LabOrderDetailResultModel();
+            resultObj.result = saveResult;
+            return resultObj;
         }
 
     }
